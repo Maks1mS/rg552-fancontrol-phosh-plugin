@@ -1,0 +1,22 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "RG552 Fan Control"
+msgstr "Управление вентилятором RG552"
+
+msgid "Change the fan mode on the RG552"
+msgstr "Изменение режима вентилятора на RG552"
+
+msgid "Fan Auto"
+msgstr "Вент. Авто"
+
+msgid "Fan Low"
+msgstr "Вент. Низк."
+
+msgid "Fan Medium"
+msgstr "Вент. Средн."
+
+msgid "Fan High"
+msgstr "Вент. Высок."

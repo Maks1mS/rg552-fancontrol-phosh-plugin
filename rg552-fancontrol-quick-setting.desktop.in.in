@@ -1,0 +1,7 @@
+[Plugin]
+# Translators: This is an internal id, no need to translate it
+Id=@name@
+Name=RG552 Fan Control
+Types=quick-setting;
+Comment=Change the fan mode on the RG552
+Plugin=@plugins_dir@/libphosh-plugin-@name@.so

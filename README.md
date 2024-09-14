@@ -1,0 +1,1 @@
+# Phosh Plugin for fan control (Anbernic RG552)
