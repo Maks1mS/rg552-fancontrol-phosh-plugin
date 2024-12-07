@@ -17,7 +17,7 @@ gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
 libhandy_dep = dependency('libhandy-1', version: '>=1.1.90', fallback: ['libhandy', 'libhandy_dep'], default_options: ['introspection=disabled'])
 libnm_dep = dependency('libnm', version: '>=1.14')
 phosh_plugins_dep = dependency('phosh-plugins', required: true, method: 'pkg-config')
-libphosh_dep = dependency('libphosh-0', required: true, method: 'pkg-config')
+libphosh_dep = dependency('libphosh-0.43', required: true, method: 'pkg-config')
 
 plugin_deps = [
   gobject_dep,
