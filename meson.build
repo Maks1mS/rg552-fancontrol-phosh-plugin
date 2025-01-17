@@ -18,7 +18,16 @@ libhandy_dep = dependency('libhandy-1', version: '>=1.1.90', fallback: ['libhand
 libnm_dep = dependency('libnm', version: '>=1.14')
 phosh_plugins_dep = dependency('phosh-plugins', required: true, method: 'pkg-config')
 
-libphosh_version = get_option('libphosh_version') != '' ? get_option('libphosh_version') : '0.44'
+# Detect libphosh API version
+# Due to the unstable API, the version changes frequently, 
+# which makes it difficult to maintain in the package repository.
+result = run_command('bash', 'scripts/detect-libphosh-api-version.sh')
+
+if result.returncode() != 0
+  error(result.stderr())
+endif
+
+libphosh_version = result.stdout().strip()
 libphosh_dep = dependency('libphosh-' + libphosh_version, required: true, method: 'pkg-config')
 
 plugin_deps = [
