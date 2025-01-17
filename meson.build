@@ -16,7 +16,7 @@ gobject_dep = dependency('gobject-2.0', version: glib_ver_cmp)
 gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
 libhandy_dep = dependency('libhandy-1', version: '>=1.1.90', fallback: ['libhandy', 'libhandy_dep'], default_options: ['introspection=disabled'])
 libnm_dep = dependency('libnm', version: '>=1.14')
-phosh_plugins_dep = dependency('phosh-plugins', required: true, method: 'pkg-config')
+phosh_plugins_dep = dependency('phosh-plugins')
 
 # Detect libphosh API version
 # Due to the unstable API, the version changes frequently, 
@@ -28,7 +28,7 @@ if result.returncode() != 0
 endif
 
 libphosh_version = result.stdout().strip()
-libphosh_dep = dependency('libphosh-' + libphosh_version, required: true, method: 'pkg-config')
+libphosh_dep = dependency('libphosh-' + libphosh_version)
 
 plugin_deps = [
   gobject_dep,
