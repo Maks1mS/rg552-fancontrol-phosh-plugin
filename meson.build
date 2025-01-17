@@ -14,14 +14,11 @@ i18n  = import('i18n')
 # Dependencies
 gobject_dep = dependency('gobject-2.0', version: glib_ver_cmp)
 gtk_dep = dependency('gtk+-3.0', version: '>=3.22')
-libhandy_dep = dependency('libhandy-1', version: '>=1.1.90', fallback: ['libhandy', 'libhandy_dep'], default_options: ['introspection=disabled'])
-libnm_dep = dependency('libnm', version: '>=1.14')
-phosh_plugins_dep = dependency('phosh-plugins')
 
 # Detect libphosh API version
 # Due to the unstable API, the version changes frequently, 
 # which makes it difficult to maintain in the package repository.
-result = run_command('bash', 'scripts/detect-libphosh-api-version.sh')
+result = run_command('bash', 'scripts/detect-libphosh-api-version.sh', check: true)
 
 if result.returncode() != 0
   error(result.stderr())
@@ -33,9 +30,6 @@ libphosh_dep = dependency('libphosh-' + libphosh_version)
 plugin_deps = [
   gobject_dep,
   gtk_dep,
-  libhandy_dep,
-  libnm_dep,
-  phosh_plugins_dep,
   libphosh_dep
 ]
 
