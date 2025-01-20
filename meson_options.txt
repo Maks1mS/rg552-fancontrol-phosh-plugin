@@ -1,1 +1,0 @@
-option('libphosh_version', type: 'string', value: '', description: 'Custom version of libphosh to use (default: 0.44)')
