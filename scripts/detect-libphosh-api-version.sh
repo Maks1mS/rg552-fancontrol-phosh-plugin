@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pc_file=$(find "/usr/lib64/pkgconfig" -maxdepth 1 -type f -name "libphosh-*.pc" | head -n 1)
+pc_file=$(find "/usr/lib64/pkgconfig" -maxdepth 1 -type f -name "libphosh-*.pc" -print -quit)
 
 if [ -z "$pc_file" ]; then
   echo "File libphosh-*.pc not found."
